@@ -82,6 +82,10 @@ class Room extends JsonResource
             'usage' => $this->when($latestMeeting->end == null, [
                 'participant_count' => $this->participant_count,
             ]),
+            'dial_in' => $this->when($latestMeeting->end == null && ! in_array($latestMeeting->dial_number, config('bigbluebutton.invalid_dial_numbers')), [
+                'number' => $latestMeeting->dial_number,
+                'pin' => $latestMeeting->voice_bridge,
+            ]),
             'server_connection_issues' => $latestMeeting->end == null && $latestMeeting->server->error_count > 0,
         ];
     }
