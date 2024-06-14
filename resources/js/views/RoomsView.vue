@@ -202,6 +202,11 @@
                     @guests-not-allowed="handleGuestsNotAllowed"
                     @changed="reload"
                   />
+                  <RoomJoinByPhoneButton
+                    v-if="running && room.last_meeting.dial_in"
+                    :number="room.last_meeting.dial_in.number"
+                    :pin="room.last_meeting.dial_in.pin"
+                  />
                   <RoomBrowserNotification
                     :room-name="room.name"
                     :running="running"
