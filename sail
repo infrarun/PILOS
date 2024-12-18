@@ -70,9 +70,8 @@ function display_help {
     echo "  ${GREEN}sail yarn run prod${NC}"
     echo
     echo "${YELLOW}Database Commands:${NC}"
-    echo "  ${GREEN}sail mysql${NC}     Start a MySQL CLI session within the 'mysql' container"
-    echo "  ${GREEN}sail mariadb${NC}   Start a MySQL CLI session within the 'mariadb' container"
-    echo "  ${GREEN}sail psql${NC}      Start a PostgreSQL CLI session within the 'pgsql' container"
+    echo "  ${GREEN}sail mariadb${NC}   Start a MySQL CLI session within the 'db' container"
+    echo "  ${GREEN}sail psql${NC}      Start a PostgreSQL CLI session within the 'db' container"
     echo "  ${GREEN}sail redis${NC}     Start a Redis CLI session within the 'redis' container"
     echo
     echo "${YELLOW}Debugging:${NC}"
@@ -387,28 +386,15 @@ elif [ "$1" == "yarn" ]; then
         sail_is_not_running
     fi
 
-# Initiate a MySQL CLI terminal session within the "mysql" container...
-elif [ "$1" == "mysql" ]; then
-    shift 1
-
-    if [ "$EXEC" == "yes" ]; then
-        ARGS+=(exec)
-        [ ! -t 0 ] && ARGS+=(-T)
-        ARGS+=(mysql bash -c)
-        ARGS+=("MYSQL_PWD=\${MYSQL_PASSWORD} mysql -u \${MYSQL_USER} \${MYSQL_DATABASE}")
-    else
-        sail_is_not_running
-    fi
-
-# Initiate a MySQL CLI terminal session within the "mariadb" container...
+# Initiate a MySQL CLI terminal session within the "db" container...
 elif [ "$1" == "mariadb" ]; then
     shift 1
 
     if [ "$EXEC" == "yes" ]; then
         ARGS+=(exec)
         [ ! -t 0 ] && ARGS+=(-T)
-        ARGS+=(mariadb bash -c)
-        ARGS+=("MYSQL_PWD=\${MYSQL_PASSWORD} mysql -u \${MYSQL_USER} \${MYSQL_DATABASE}")
+        ARGS+=(db bash -c)
+        ARGS+=("MYSQL_PWD=\${MARIADB_PASSWORD} mariadb -u \${MARIADB_USER} \${MARIADB_DATABASE}")
     else
         sail_is_not_running
     fi
