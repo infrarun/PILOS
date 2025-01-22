@@ -198,6 +198,7 @@
           <Column :style="{ width: '100px' }" :header="$t('app.actions')">
             <template #body="slotProps">
               <div class="flex justify-between">
+                <!-- TODO Refactor -->
                 <router-link
                   :to="{
                     name: 'rooms.view',

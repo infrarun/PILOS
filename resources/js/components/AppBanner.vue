@@ -27,6 +27,7 @@
       <p class="m-0 whitespace-pre-wrap">
         {{ message }}
       </p>
+      <!-- TODO Refactor -->
       <a v-if="link" :href="link" :target="`_${linkTarget}`">
         <Button
           :link="linkStyle === 'link'"
