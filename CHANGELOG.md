@@ -349,6 +349,8 @@ You can find the changelog for older versions there [here](https://github.com/TH
 [#1759]: https://github.com/THM-Health/PILOS/issues/1759
 [#1760]: https://github.com/THM-Health/PILOS/pull/1760
 [#1772]: https://github.com/THM-Health/PILOS/pull/1772
+[#1784]: https://github.com/THM-Health/PILOS/issues/1784
+[#1787]: https://github.com/THM-Health/PILOS/pull/1787
 [#1791]: https://github.com/THM-Health/PILOS/issues/1791
 [#1794]: https://github.com/THM-Health/PILOS/pull/1794
 [#1801]: https://github.com/THM-Health/PILOS/pull/1801
