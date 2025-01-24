@@ -87,7 +87,7 @@
 <script setup>
 import env from "../env";
 import { useAuthStore } from "../stores/auth";
-import { computed, onBeforeMount, ref } from "vue";
+import { computed, onBeforeMount, ref, watch } from "vue";
 import { useApi } from "../composables/useApi.js";
 import { useUserPermissions } from "../composables/useUserPermission.js";
 import { useFormErrors } from "../composables/useFormErrors.js";
@@ -106,7 +106,7 @@ const props = defineProps({
   },
 });
 
-const emit = defineEmits(["updateUser", "notFoundError"]);
+const emit = defineEmits(["updateUser", "notFoundError", "busy"]);
 
 const api = useApi();
 const userPermissions = useUserPermissions();
@@ -127,6 +127,10 @@ const isOwnUser = computed(() => {
 onBeforeMount(() => {
   email.value = props.user.email;
   validationRequiredEmail.value = null;
+});
+
+watch(isBusy, () => {
+  emit("busy", isBusy.value);
 });
 
 function save(event) {
