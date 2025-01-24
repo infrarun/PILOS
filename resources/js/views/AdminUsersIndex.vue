@@ -185,7 +185,7 @@
                   lastname: slotProps.data.lastname,
                 })
               "
-              as="router-link"
+              :as="isBusy ? 'button' : 'router-link'"
               :aria-label="
                 $t('admin.users.view', {
                   firstname: slotProps.data.firstname,
@@ -207,7 +207,7 @@
                   lastname: slotProps.data.lastname,
                 })
               "
-              as="router-link"
+              :as="isBusy ? 'button' : 'router-link'"
               severity="info"
               :aria-label="
                 $t('admin.users.edit', {
@@ -231,6 +231,7 @@
               :firstname="slotProps.data.firstname"
               :lastname="slotProps.data.lastname"
               :email="slotProps.data.email"
+              :disabled="isBusy"
             />
             <SettingsUsersDeleteButton
               v-if="userPermissions.can('delete', slotProps.data)"
@@ -238,6 +239,7 @@
               :firstname="slotProps.data.firstname"
               :lastname="slotProps.data.lastname"
               @deleted="loadData()"
+              :disabled="isBusy"
             />
           </div>
         </template>

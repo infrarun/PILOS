@@ -91,7 +91,7 @@
             <Button
               v-if="userPermissions.can('view', slotProps.data)"
               v-tooltip="$t('admin.roles.view', { name: slotProps.data.name })"
-              as="router-link"
+              :as="isBusy ? 'button' : 'router-link'"
               :aria-label="
                 $t('admin.roles.view', { name: slotProps.data.name })
               "
@@ -105,7 +105,7 @@
             <Button
               v-if="userPermissions.can('update', slotProps.data)"
               v-tooltip="$t('admin.roles.edit', { name: slotProps.data.name })"
-              as="router-link"
+              :as="isBusy ? 'button' : 'router-link'"
               severity="info"
               :aria-label="
                 $t('admin.roles.edit', { name: slotProps.data.name })
@@ -121,6 +121,7 @@
               v-if="userPermissions.can('delete', slotProps.data)"
               :id="slotProps.data.id"
               :name="slotProps.data.name"
+              :disabled="isBusy"
               @deleted="loadData()"
             />
           </div>

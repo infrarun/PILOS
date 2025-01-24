@@ -4,7 +4,7 @@
       <div v-if="model.id !== null && id !== 'new'" class="flex gap-2">
         <Button
           v-if="!viewOnly && userPermissions.can('view', model)"
-          as="router-link"
+          :as="isBusy ? 'button' : 'router-link'"
           :disabled="isBusy"
           :to="{ name: 'admin.servers.view', params: { id: model.id } }"
           severity="secondary"
@@ -13,7 +13,7 @@
         />
         <Button
           v-if="viewOnly && userPermissions.can('update', model)"
-          as="router-link"
+          :as="isBusy ? 'button' : 'router-link'"
           :disabled="isBusy"
           :to="{ name: 'admin.servers.edit', params: { id: model.id } }"
           severity="info"
@@ -24,6 +24,7 @@
           v-if="userPermissions.can('delete', model) && isDisabled"
           :id="model.id"
           :name="name"
+          :disabled="isBusy"
           @deleted="$router.push({ name: 'admin.servers' })"
         ></SettingsServersDeleteButton>
       </div>

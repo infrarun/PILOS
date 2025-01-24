@@ -13,7 +13,7 @@
         lastname: props.lastname,
       })
     "
-    :disabled="isBusy"
+    :disabled="isBusy || props.disabled"
     severity="warn"
     icon="fa-solid fa-key"
     @click="showModal"
@@ -80,6 +80,10 @@ const props = defineProps({
   email: {
     type: String,
     required: true,
+  },
+  disabled: {
+    type: Boolean,
+    default: false,
   },
 });
 

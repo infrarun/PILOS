@@ -2,7 +2,7 @@
   <Button
     v-tooltip="$t('admin.roles.delete.item', { id: props.name })"
     :aria-label="$t('admin.roles.delete.item', { id: props.name })"
-    :disabled="isBusy"
+    :disabled="isBusy || props.disabled"
     severity="danger"
     icon="fa-solid fa-trash"
     @click="showModal"
@@ -52,6 +52,10 @@ const props = defineProps({
   name: {
     type: String,
     required: true,
+  },
+  disabled: {
+    type: Boolean,
+    default: false,
   },
 });
 
