@@ -83,7 +83,7 @@ class UpdateSettings extends FormRequest
             'bbb_logo_dark' => ['nullable', 'string', 'max:255'],
             'bbb_logo_dark_file' => ['bail', 'image:allow_svg', 'max:500', new Antivirus()],
 
-            'bbb_style' => ['bail', 'nullable', 'file', 'max:500', new Antivirus()],
+            'bbb_style' => ['bail', 'nullable', 'file', 'max:500', 'extensions:css', new Antivirus()],
             'bbb_default_presentation' => ['bail', 'nullable', 'file', 'max:'.(config('bigbluebutton.max_filesize') * 1000), 'mimes:'.config('bigbluebutton.allowed_file_mimes'), new Antivirus()],
         ];
     }
