@@ -23,6 +23,16 @@ const FeatureList = [
       </>
     ),
   },
+  {
+    title: "Use",
+    Svg: require("@site/static/img/user-solid.svg").default,
+    to: "./docs/user/intro",
+    description: (
+      <>
+        Get to know PILOS and learn how to use it effectively.
+      </>
+    ),
+  },
 ];
 
 function Feature({ Svg, title, description, to }) {

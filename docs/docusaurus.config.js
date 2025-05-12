@@ -90,6 +90,12 @@ const config = {
             label: "Development",
           },
           {
+            type: "docSidebar",
+            sidebarId: "userSidebar",
+            position: "left",
+            label: "Use",
+          },
+          {
             type: "docsVersionDropdown",
             position: "right",
             dropdownActiveClassDisabled: true,
