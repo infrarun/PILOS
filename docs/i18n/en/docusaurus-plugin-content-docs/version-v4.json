@@ -1,0 +1,18 @@
+{
+  "version.label": {
+    "message": "v4",
+    "description": "The label for version v4"
+  },
+  "sidebar.administrationSidebar.category.Advanced": {
+    "message": "Advanced",
+    "description": "The label for category Advanced in sidebar administrationSidebar"
+  },
+  "sidebar.administrationSidebar.category.Customisation": {
+    "message": "Customisation",
+    "description": "The label for category Customisation in sidebar administrationSidebar"
+  },
+  "sidebar.administrationSidebar.category.Plugins": {
+    "message": "Plugins",
+    "description": "The label for category Plugins in sidebar administrationSidebar"
+  }
+}

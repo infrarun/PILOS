@@ -1,0 +1,26 @@
+{
+  "title": {
+    "message": "Dokumentation",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "My Site Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Administration": {
+    "message": "Administration",
+    "description": "Navbar item with label Administration"
+  },
+  "item.label.Development": {
+    "message": "Entwicklung",
+    "description": "Navbar item with label Development"
+  },
+  "item.label.Use": {
+    "message": "Benutzen",
+    "description": "Navbar item with label Use"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  }
+}
