@@ -54,7 +54,7 @@
       <div class="flex justify-end">
         <Button
           severity="danger"
-          :disabled="loading || loadingError"
+          :disabled="loadingError"
           class="mt-4"
           :label="$t('auth.sessions.logout_all')"
           icon="fa-solid fa-right-from-bracket"

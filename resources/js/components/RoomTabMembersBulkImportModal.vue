@@ -25,7 +25,7 @@
         class="flex w-full flex-col justify-end gap-2 sm:flex-row"
       >
         <Button
-          :disabled="rawList.length === 0 || isLoadingAction"
+          :disabled="rawList.length === 0"
           :loading="isLoadingAction"
           :label="$t('rooms.members.modals.add.add')"
           data-test="dialog-continue-button"
@@ -46,7 +46,6 @@
         />
         <Button
           v-if="validUsers.length > 0"
-          :disabled="isLoadingAction"
           :loading="isLoadingAction"
           :label="
             $t('rooms.members.modals.bulk_import.import_importable_button')

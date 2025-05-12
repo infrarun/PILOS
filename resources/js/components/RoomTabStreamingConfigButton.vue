@@ -36,7 +36,7 @@
           data-test="dialog-save-button"
           :label="$t('app.save')"
           :loading="isLoadingAction"
-          :disabled="isLoadingAction || isLoading || modelLoadingError"
+          :disabled="isLoading || modelLoadingError"
           @click="save"
         />
       </div>

@@ -47,7 +47,6 @@
             <!-- Reload page, in case the room settings changed -->
             <Button
               data-test="reload-room-button"
-              :disabled="loading"
               :loading="loading"
               icon="fa-solid fa-sync"
               :label="$t('rooms.try_again')"

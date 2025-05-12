@@ -26,7 +26,7 @@
       <div class="flex justify-end">
         <Button
           v-if="!viewOnly && userPermissions.can('editUserRole', model)"
-          :disabled="isBusy || rolesLoadingError || rolesLoading"
+          :disabled="rolesLoadingError || rolesLoading"
           type="submit"
           :loading="isBusy"
           :label="$t('app.save')"

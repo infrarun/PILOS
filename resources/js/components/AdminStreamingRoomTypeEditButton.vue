@@ -41,7 +41,7 @@
         <Button
           :label="$t('app.save')"
           :loading="isLoadingAction"
-          :disabled="isLoadingAction || loadingError"
+          :disabled="loadingError"
           data-test="dialog-save-button"
           @click="save"
         />
